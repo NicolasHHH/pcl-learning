@@ -76,5 +76,6 @@
         "cinttypes": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/00base/00pcd_write"
 }

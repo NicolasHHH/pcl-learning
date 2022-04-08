@@ -1,12 +1,31 @@
-# PCL(Point Cloud Library)学习指南&资料推荐
+# PCL(Point Cloud Library) Guide
 
-> **PCL开始上手其实有点容易迷惑，而且PCL文档最近（2020）改版了。里面很多文档和之前的都不一样了，我自己学习PCL时，看的是最新文档，也踩了很多坑，现在分享一下自己的学习方法和思路，希望对大家有所帮助。**
-> 先放下个人学习代码 **（有详细中文注解）**：[https://github.com/HuangCongQing/pcl-learning](https://github.com/HuangCongQing/pcl-learning)
-> 自己做了很多笔记，有时间可以整理出来，发出来！
+## Environment Setup
+
+system : ubuntu 20.04 arm64 + ros-noetic
+
+    sudo apt-get install libpcl-dev pcl-tools
+
+dependencies : 
+
+    #boost
+    sudo apt-get install libboost-all-dev 
+
+    #eigen3
+    sudo apt-get install libeigen3-dev
+
+    #Flann
+    sudo apt-get install libflann-dev
+
+## Compile
+
+    mkdir build
+    cd build
+    cmake ..
+    make
 
 
 ## 目录
-
 
 [PCL介绍](https://github.com/HuangCongQing/pcl-learning/blob/master/PCL%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97&%E8%B5%84%E6%96%99%E6%8E%A8%E8%8D%90.md#pcl-%E4%BB%8B%E7%BB%8D)
 

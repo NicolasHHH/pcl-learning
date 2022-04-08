@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/hcq/pcl/pcl-learning/00base/00pcd_write/pcd_write.cpp
+/home/parallels/pcl/pcl-learning/00base/00pcd_write/pcd_write.cpp
 iostream
 -
 pcl/io/pcd_io.h
@@ -17,12 +17,16 @@ pcl/point_types.h
 /usr/include/eigen3/Eigen/Cholesky
 Core
 /usr/include/eigen3/Eigen/Core
+Jacobi
+/usr/include/eigen3/Eigen/Jacobi
 src/Core/util/DisableStupidWarnings.h
 /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h
 src/Cholesky/LLT.h
 /usr/include/eigen3/Eigen/src/Cholesky/LLT.h
 src/Cholesky/LDLT.h
 /usr/include/eigen3/Eigen/src/Cholesky/LDLT.h
+mkl_lapacke.h
+/usr/include/eigen3/Eigen/mkl_lapacke.h
 src/misc/lapacke.h
 /usr/include/eigen3/Eigen/src/misc/lapacke.h
 src/Cholesky/LLT_LAPACKE.h
@@ -33,7 +37,7 @@ src/Core/util/ReenableStupidWarnings.h
 /usr/include/eigen3/Eigen/Core
 src/Core/util/DisableStupidWarnings.h
 /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h
-math_functions.hpp
+cuda_runtime.h
 -
 new
 -
@@ -153,6 +157,8 @@ src/Core/arch/AVX/Complex.h
 /usr/include/eigen3/Eigen/src/Core/arch/AVX/Complex.h
 src/Core/arch/AVX/TypeCasting.h
 /usr/include/eigen3/Eigen/src/Core/arch/AVX/TypeCasting.h
+src/Core/arch/SSE/TypeCasting.h
+/usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h
 src/Core/arch/SSE/PacketMath.h
 /usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h
 src/Core/arch/SSE/MathFunctions.h
@@ -457,6 +463,8 @@ src/LU/FullPivLU.h
 /usr/include/eigen3/Eigen/src/LU/FullPivLU.h
 src/LU/PartialPivLU.h
 /usr/include/eigen3/Eigen/src/LU/PartialPivLU.h
+mkl_lapacke.h
+/usr/include/eigen3/Eigen/mkl_lapacke.h
 src/misc/lapacke.h
 /usr/include/eigen3/Eigen/src/misc/lapacke.h
 src/LU/PartialPivLU_LAPACKE.h
@@ -489,6 +497,8 @@ src/QR/ColPivHouseholderQR.h
 /usr/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h
 src/QR/CompleteOrthogonalDecomposition.h
 /usr/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h
+mkl_lapacke.h
+/usr/include/eigen3/Eigen/mkl_lapacke.h
 src/misc/lapacke.h
 /usr/include/eigen3/Eigen/src/misc/lapacke.h
 src/QR/HouseholderQR_LAPACKE.h
@@ -517,6 +527,8 @@ src/SVD/JacobiSVD.h
 /usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h
 src/SVD/BDCSVD.h
 /usr/include/eigen3/Eigen/src/SVD/BDCSVD.h
+mkl_lapacke.h
+/usr/include/eigen3/Eigen/mkl_lapacke.h
 src/misc/lapacke.h
 /usr/include/eigen3/Eigen/src/misc/lapacke.h
 src/SVD/JacobiSVD_LAPACKE.h
@@ -952,163 +964,7 @@ lapacke_mangling.h
 
 /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
-/usr/include/x86_64-linux-gnu/bits/mman-linux.h
-bits/mman-shared.h
--
-
-/usr/include/x86_64-linux-gnu/bits/mman-shared.h
-
-/usr/include/x86_64-linux-gnu/bits/mman.h
-bits/mman-linux.h
--
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h
-bits/wordsize.h
--
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h
-bits/thread-shared-types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/select.h
-bits/wordsize.h
--
-
-/usr/include/x86_64-linux-gnu/bits/select2.h
-
-/usr/include/x86_64-linux-gnu/bits/stat.h
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/sysmacros.h
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h
-bits/pthreadtypes-arch.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types.h
-features.h
--
-bits/wordsize.h
--
-bits/typesizes.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h
-
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h
-bits/types/__sigset_t.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/typesizes.h
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h
-
-/usr/include/x86_64-linux-gnu/sys/fcntl.h
-fcntl.h
--
-
-/usr/include/x86_64-linux-gnu/sys/mman.h
-features.h
--
-bits/types.h
--
-stddef.h
--
-bits/mman.h
--
-
-/usr/include/x86_64-linux-gnu/sys/select.h
-features.h
--
-bits/types.h
--
-bits/select.h
--
-bits/types/sigset_t.h
--
-bits/types/time_t.h
--
-bits/types/struct_timeval.h
--
-bits/types/struct_timespec.h
--
-bits/select2.h
--
-
-/usr/include/x86_64-linux-gnu/sys/stat.h
-features.h
--
-bits/types.h
--
-bits/types/struct_timespec.h
--
-bits/types/time_t.h
--
-bits/stat.h
--
-
-/usr/include/x86_64-linux-gnu/sys/sysmacros.h
-features.h
--
-bits/types.h
--
-bits/sysmacros.h
--
-
-/usr/include/x86_64-linux-gnu/sys/types.h
-features.h
--
-bits/types.h
--
-bits/types/clock_t.h
--
-bits/types/clockid_t.h
--
-bits/types/time_t.h
--
-bits/types/timer_t.h
--
-stddef.h
--
-bits/stdint-intn.h
--
-endian.h
--
-sys/select.h
--
-sys/sysmacros.h
--
-bits/pthreadtypes.h
--
-
-/usr/local/include/pcl-1.9/pcl/PCLHeader.h
+/usr/include/pcl-1.10/pcl/PCLHeader.h
 string
 -
 vector
@@ -1120,7 +976,7 @@ pcl/pcl_macros.h
 ostream
 -
 
-/usr/local/include/pcl-1.9/pcl/PCLImage.h
+/usr/include/pcl-1.10/pcl/PCLImage.h
 string
 -
 vector
@@ -1130,33 +986,29 @@ ostream
 pcl/PCLHeader.h
 -
 
-/usr/local/include/pcl-1.9/pcl/PCLPointCloud2.h
-string
+/usr/include/pcl-1.10/pcl/PCLPointCloud2.h
+ostream
 -
 vector
 -
-ostream
--
-boost/detail/endian.hpp
+boost/predef/other/endian.h
 -
 pcl/PCLHeader.h
 -
 pcl/PCLPointField.h
 -
 
-/usr/local/include/pcl-1.9/pcl/PCLPointField.h
+/usr/include/pcl-1.10/pcl/PCLPointField.h
 string
 -
 vector
 -
 ostream
 -
-boost/shared_ptr.hpp
--
 pcl/pcl_macros.h
 -
 
-/usr/local/include/pcl-1.9/pcl/PointIndices.h
+/usr/include/pcl-1.10/pcl/PointIndices.h
 string
 -
 vector
@@ -1166,7 +1018,9 @@ ostream
 pcl/PCLHeader.h
 -
 
-/usr/local/include/pcl-1.9/pcl/PolygonMesh.h
+/usr/include/pcl-1.10/pcl/PolygonMesh.h
+algorithm
+-
 string
 -
 vector
@@ -1180,7 +1034,7 @@ pcl/PCLPointCloud2.h
 pcl/Vertices.h
 -
 
-/usr/local/include/pcl-1.9/pcl/TextureMesh.h
+/usr/include/pcl-1.10/pcl/TextureMesh.h
 Eigen/Core
 -
 string
@@ -1190,7 +1044,7 @@ pcl/PCLPointCloud2.h
 pcl/Vertices.h
 -
 
-/usr/local/include/pcl-1.9/pcl/Vertices.h
+/usr/include/pcl-1.10/pcl/Vertices.h
 string
 -
 vector
@@ -1202,15 +1056,17 @@ boost/shared_ptr.hpp
 pcl/pcl_macros.h
 -
 
-/usr/local/include/pcl-1.9/pcl/common/concatenate.h
+/usr/include/pcl-1.10/pcl/common/concatenate.h
 pcl/conversions.h
 -
+type_traits
+-
 
-/usr/local/include/pcl-1.9/pcl/common/copy_point.h
+/usr/include/pcl-1.10/pcl/common/copy_point.h
 pcl/common/impl/copy_point.hpp
 -
 
-/usr/local/include/pcl-1.9/pcl/common/impl/copy_point.hpp
+/usr/include/pcl-1.10/pcl/common/impl/copy_point.hpp
 pcl/point_types.h
 -
 pcl/point_traits.h
@@ -1220,7 +1076,7 @@ pcl/for_each_type.h
 pcl/common/concatenate.h
 -
 
-/usr/local/include/pcl-1.9/pcl/common/impl/io.hpp
+/usr/include/pcl-1.10/pcl/common/impl/io.hpp
 pcl/common/concatenate.h
 -
 pcl/common/copy_point.h
@@ -1228,7 +1084,9 @@ pcl/common/copy_point.h
 pcl/point_types.h
 -
 
-/usr/local/include/pcl-1.9/pcl/common/io.h
+/usr/include/pcl-1.10/pcl/common/io.h
+numeric
+-
 string
 -
 pcl/pcl_base.h
@@ -1239,26 +1097,30 @@ pcl/conversions.h
 -
 pcl/exceptions.h
 -
+pcl/PolygonMesh.h
+-
 locale
 -
 pcl/common/impl/io.hpp
 -
 
-/usr/local/include/pcl-1.9/pcl/common/point_tests.h
+/usr/include/pcl-1.10/pcl/common/point_tests.h
+pcl/point_types.h
+-
 Eigen/src/StlSupport/details.h
 -
 
-/usr/local/include/pcl-1.9/pcl/console/print.h
-stdio.h
+/usr/include/pcl-1.10/pcl/console/print.h
+cstdio
 -
-stdarg.h
+cstdarg
 -
 pcl/pcl_exports.h
 -
 pcl/pcl_config.h
 -
 
-/usr/local/include/pcl-1.9/pcl/conversions.h
+/usr/include/pcl-1.10/pcl/conversions.h
 pcl/PCLPointField.h
 -
 pcl/PCLPointCloud2.h
@@ -1278,7 +1140,7 @@ pcl/console/print.h
 boost/foreach.hpp
 -
 
-/usr/local/include/pcl-1.9/pcl/exceptions.h
+/usr/include/pcl-1.10/pcl/exceptions.h
 stdexcept
 -
 sstream
@@ -1288,7 +1150,7 @@ pcl/pcl_macros.h
 boost/current_function.hpp
 -
 
-/usr/local/include/pcl-1.9/pcl/for_each_type.h
+/usr/include/pcl-1.10/pcl/for_each_type.h
 boost/mpl/is_sequence.hpp
 -
 boost/mpl/begin_end.hpp
@@ -1307,10 +1169,10 @@ boost/mpl/not.hpp
 -
 boost/mpl/aux_/unwrap.hpp
 -
-boost/type_traits/is_same.hpp
+type_traits
 -
 
-/usr/local/include/pcl-1.9/pcl/impl/pcl_base.hpp
+/usr/include/pcl-1.10/pcl/impl/pcl_base.hpp
 pcl/pcl_base.h
 -
 pcl/console/print.h
@@ -1318,36 +1180,22 @@ pcl/console/print.h
 cstddef
 -
 
-/usr/local/include/pcl-1.9/pcl/impl/point_types.hpp
-Eigen/Core
+/usr/include/pcl-1.10/pcl/impl/point_types.hpp
+algorithm
 -
 ostream
 -
-pcl/common/point_tests.h
+Eigen/Core
+-
+pcl/pcl_macros.h
 -
 
-/usr/local/include/pcl-1.9/pcl/io/boost.h
+/usr/include/pcl-1.10/pcl/io/boost.h
 boost/version.hpp
 -
 boost/numeric/conversion/cast.hpp
 -
-boost/thread/mutex.hpp
--
-boost/thread/condition.hpp
--
-boost/thread.hpp
--
-boost/thread/thread.hpp
--
 boost/filesystem.hpp
--
-boost/bind.hpp
--
-boost/cstdint.hpp
--
-boost/function.hpp
--
-boost/tuple/tuple.hpp
 -
 boost/shared_ptr.hpp
 -
@@ -1366,8 +1214,6 @@ boost/mpl/transform.hpp
 boost/mpl/vector.hpp
 -
 boost/date_time/posix_time/posix_time.hpp
--
-boost/chrono.hpp
 -
 boost/tokenizer.hpp
 -
@@ -1388,7 +1234,7 @@ boost/algorithm/string.hpp
 boost/interprocess/sync/file_lock.hpp
 -
 
-/usr/local/include/pcl-1.9/pcl/io/file_io.h
+/usr/include/pcl-1.10/pcl/io/file_io.h
 pcl/pcl_macros.h
 -
 pcl/common/io.h
@@ -1404,14 +1250,14 @@ pcl/PolygonMesh.h
 pcl/TextureMesh.h
 -
 
-/usr/local/include/pcl-1.9/pcl/io/impl/pcd_io.hpp
+/usr/include/pcl-1.10/pcl/io/impl/pcd_io.hpp
 fstream
 -
 fcntl.h
 -
 string
 -
-stdlib.h
+cstdlib
 -
 pcl/console/print.h
 -
@@ -1424,7 +1270,7 @@ pcl/io/pcd_io.h
 pcl/io/lzf.h
 -
 
-/usr/local/include/pcl-1.9/pcl/io/low_level_io.h
+/usr/include/pcl-1.10/pcl/io/low_level_io.h
 io.h
 -
 windows.h
@@ -1443,12 +1289,16 @@ sys/fcntl.h
 -
 cerrno
 -
+cstddef
+-
 
-/usr/local/include/pcl-1.9/pcl/io/lzf.h
+/usr/include/pcl-1.10/pcl/io/lzf.h
 pcl/pcl_macros.h
 -
 
-/usr/local/include/pcl-1.9/pcl/io/pcd_io.h
+/usr/include/pcl-1.10/pcl/io/pcd_io.h
+pcl/pcl_macros.h
+-
 pcl/point_cloud.h
 -
 pcl/io/file_io.h
@@ -1456,7 +1306,19 @@ pcl/io/file_io.h
 pcl/io/impl/pcd_io.hpp
 -
 
-/usr/local/include/pcl-1.9/pcl/pcl_base.h
+/usr/include/pcl-1.10/pcl/make_shared.h
+type_traits
+-
+utility
+-
+boost/make_shared.hpp
+-
+boost/shared_ptr.hpp
+-
+pcl/point_traits.h
+-
+
+/usr/include/pcl-1.10/pcl/pcl_base.h
 pcl/pcl_macros.h
 -
 boost/shared_ptr.hpp
@@ -1474,41 +1336,37 @@ pcl/PCLPointCloud2.h
 pcl/impl/pcl_base.hpp
 -
 
-/usr/local/include/pcl-1.9/pcl/pcl_config.h
+/usr/include/pcl-1.10/pcl/pcl_config.h
 
-/usr/local/include/pcl-1.9/pcl/pcl_exports.h
+/usr/include/pcl-1.10/pcl/pcl_exports.h
 
-/usr/local/include/pcl-1.9/pcl/pcl_macros.h
-pcl/pcl_config.h
+/usr/include/pcl-1.10/pcl/pcl_macros.h
+cmath
 -
-boost/cstdint.hpp
+cstdarg
+-
+cstdio
 -
 cstdlib
 -
+cstdint
+-
 iostream
 -
-stdarg.h
+boost/cstdint.hpp
 -
-stdio.h
+boost/smart_ptr/shared_ptr.hpp
 -
-math.h
+Eigen/Core
 -
-math.h
--
-cmath
--
-cmath
--
-stdio.h
--
-math.h
+pcl/pcl_config.h
 -
 malloc.h
 -
 mm_malloc.h
 -
 
-/usr/local/include/pcl-1.9/pcl/point_cloud.h
+/usr/include/pcl-1.10/pcl/point_cloud.h
 Eigen/StdVector
 -
 Eigen/Geometry
@@ -1517,28 +1375,34 @@ pcl/PCLHeader.h
 -
 pcl/exceptions.h
 -
+pcl/pcl_macros.h
+-
 pcl/point_traits.h
 -
+pcl/make_shared.h
+-
+algorithm
+-
+utility
+-
+vector
+-
 
-/usr/local/include/pcl-1.9/pcl/point_traits.h
+/usr/include/pcl-1.10/pcl/point_traits.h
 pcl/pcl_macros.h
-/usr/local/include/pcl-1.9/pcl/pcl/pcl_macros.h
+/usr/include/pcl-1.10/pcl/pcl/pcl_macros.h
 pcl/PCLPointField.h
 -
-boost/type_traits/remove_all_extents.hpp
--
-boost/type_traits/is_same.hpp
--
 boost/mpl/assert.hpp
--
-boost/mpl/bool.hpp
 -
 Eigen/Core
 -
 Eigen/src/StlSupport/details.h
 -
+type_traits
+-
 
-/usr/local/include/pcl-1.9/pcl/point_types.h
+/usr/include/pcl-1.10/pcl/point_types.h
 pcl/pcl_macros.h
 -
 bitset
@@ -1553,8 +1417,10 @@ boost/mpl/vector.hpp
 -
 pcl/impl/point_types.hpp
 -
+pcl/common/point_tests.h
+-
 
-/usr/local/include/pcl-1.9/pcl/register_point_struct.h
+/usr/include/pcl-1.10/pcl/register_point_struct.h
 pcl/pcl_macros.h
 -
 pcl/point_traits.h
@@ -1571,10 +1437,8 @@ boost/preprocessor/cat.hpp
 -
 boost/preprocessor/comparison.hpp
 -
-boost/utility.hpp
+cstddef
 -
-boost/type_traits.hpp
--
-stddef.h
+type_traits
 -
 
