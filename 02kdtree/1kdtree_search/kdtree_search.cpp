@@ -1,13 +1,3 @@
-/*
- * @Description: https://www.cnblogs.com/li-yao7758258/p/6437440.html
- * @Author: HCQ
- * @Company(School): UCAS
- * @Email: 1756260160@qq.com
- * @Date: 2020-10-08 21:46:40
- * @LastEditTime: 2020-10-27 16:03:16
- * @FilePath: /pcl-learning/02kdtree/1kdtree_search/kdtree_search.cpp
- */
-
 
 #include <pcl/point_cloud.h>        //点类型定义头文件
 #include <pcl/kdtree/kdtree_flann.h> //kdtree类定义头文件
@@ -16,17 +6,16 @@
 #include <vector>
 #include <ctime>
 
-int
-main (int argc, char** argv)
+int main (int argc, char** argv)
 {
   srand (time (NULL));   //用系统时间初始化随机种子
-  //创建一个PointCloud<pcl::PointXYZ>
+  //创建一个PointCloud<pcl::PointXYZ>::Ptr
   pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
 
   // 随机点云生成
-  cloud->width = 1000;             //此处点云数量
-  cloud->height = 1;                //表示点云为无序点云
-  cloud->points.resize (cloud->width * cloud->height);
+  cloud->width = 1000;             //点云数量
+  cloud->height = 1;                //点云无序
+  cloud->points.resize (cloud->width * cloud->height); // size initialization 
 
   for (size_t i = 0; i < cloud->points.size (); ++i)   //循环填充点云数据
   {
@@ -34,11 +23,14 @@ main (int argc, char** argv)
     cloud->points[i].y = 1024.0f * rand () / (RAND_MAX + 1.0f);
     cloud->points[i].z = 1024.0f * rand () / (RAND_MAX + 1.0f);
   }
+
  //创建KdTreeFLANN对象，并把创建的点云设置为输入,创建一个searchPoint变量作为查询点
-  pcl::KdTreeFLANN<pcl::PointXYZ> kdtree; // pcl::KdTreeFLANN<PointT, Dist>::setInputCloud (const PointCloudConstPtr &cloud, const IndicesConstPtr &indices)
-  //设置搜索空间
+  pcl::KdTreeFLANN<pcl::PointXYZ> kdtree; 
+
+  // pcl::KdTreeFLANN<PointT, Dist>::setInputCloud (const PointCloudConstPtr &cloud, const IndicesConstPtr &indices)
   kdtree.setInputCloud (cloud);
-  //设置查询点并赋随机值
+
+  //查询点
   pcl::PointXYZ searchPoint;
   searchPoint.x = 1024.0f * rand () / (RAND_MAX + 1.0f);
   searchPoint.y = 1024.0f * rand () / (RAND_MAX + 1.0f);
@@ -81,6 +73,7 @@ main (int argc, char** argv)
             << " " << searchPoint.z
             << ") with radius=" << radius << std::endl;
 
+  // surcharge/overload
   // 假设我们的kdtree返回了大于0个近邻。那么它将打印出在我们"searchPoint"附近的10个最近的邻居并把它们存到先前创立的向量中。
   if ( kdtree.radiusSearch (searchPoint, radius, pointIdxRadiusSearch, pointRadiusSquaredDistance) > 0 )  //执行半径R内近邻搜索方法
   {
