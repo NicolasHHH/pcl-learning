@@ -1,7 +1,6 @@
 
 # pcl-learning 
 
-
 ## Environment Setup
 
 system : ubuntu 20.04 arm64 + ros-noetic
@@ -9,15 +8,22 @@ system : ubuntu 20.04 arm64 + ros-noetic
     sudo apt-get install libpcl-dev pcl-tools
 
 dependencies : 
-
-    #boost
-    sudo apt-get install libboost-all-dev 
-
-    #eigen3
+    
+    sudo apt-get update  
+    sudo apt-get install git build-essential linux-libc-dev
+    sudo apt-get install libusb-1.0-0-dev libusb-dev libudev-dev
+    sudo apt-get install mpi-default-dev openmpi-bin openmpi-common 
+    sudo apt-get install libflann1.9 libflann-dev
     sudo apt-get install libeigen3-dev
-
-    #Flann
-    sudo apt-get install libflann-dev
+    sudo apt-get install libboost-all-dev
+    sudo apt-get install libvtk7.1p-qt
+    sudo apt-get install libvtk7.1p 
+    sudo apt-get install libvtk7-qt-dev
+    sudo apt-get install libqhull* libgtest-dev
+    sudo apt-get install freeglut3-dev pkg-config
+    sudo apt-get install libxmu-dev libxi-dev
+    sudo apt-get install mono-complete
+    sudo apt-get install openjdk-8-jdk openjdk-8-jre
 
 ## Compile
 
@@ -25,6 +31,8 @@ dependencies :
     cd build
     cmake ..
     make
+
+## pcl_viewer
 
 **Notes : [PCL(Point Cloud Library)（2021）](https://www.yuque.com/huangzhongqing/pcl)**
 

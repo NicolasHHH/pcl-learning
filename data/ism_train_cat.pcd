@@ -1,5 +1,4 @@
 # .PCD v.7 - Point Cloud Data file format
-VERSION .7
 FIELDS x y z
 SIZE 4 4 4
 TYPE F F F
