@@ -19,6 +19,7 @@ void showHelp(char *program_name)
 int main(int argc, char **argv)
 {
 
+    // if receive "-h" or "-help"
     // Show help 展示帮助信息
     if (pcl::console::find_switch(argc, argv, "-h") || pcl::console::find_switch(argc, argv, "--help"))
     {
@@ -32,10 +33,11 @@ int main(int argc, char **argv)
 
     filenames = pcl::console::parse_file_extension_argument(argc, argv, ".ply");
 
-    if (filenames.size() != 1)
+    if (filenames.size() != 1) // <0
     {
         filenames = pcl::console::parse_file_extension_argument(argc, argv, ".pcd");
 
+        // show help if no arguments received
         if (filenames.size() != 1)
         {
             showHelp(argv[0]);
@@ -85,7 +87,7 @@ int main(int argc, char **argv)
     // 创建4x4单位阵
     Eigen::Matrix4f transform_1 = Eigen::Matrix4f::Identity();
 
-    // Define a rotation matrix (see https://en.wikipedia.org/wiki/Rotation_matrix)
+    // Define a rotation matrix in xy plane
     float theta = M_PI / 4; // The angle of rotation in radians
     transform_1(0, 0) = std::cos(theta);
     transform_1(0, 1) = -sin(theta);
@@ -94,7 +96,13 @@ int main(int argc, char **argv)
     //    (row, column)
 
     // Define a translation of 2.5 meters on the x axis.
-    transform_1(0, 3) = 2.5;
+    transform_1(0, 3) = 0.5;
+    /*
+    | cos -sin  0 0.5| 
+    | sin  cos  0  y |   
+    |  0    0   1  z |  
+    |  0    0   0  1 | 
+    */
 
     // Print the transformation
     printf("Method #1: using a Matrix4f\n");
@@ -118,7 +126,7 @@ int main(int argc, char **argv)
     // Executing the transformation
     pcl::PointCloud<pcl::PointXYZ>::Ptr transformed_cloud(new pcl::PointCloud<pcl::PointXYZ>());
     // You can either apply transform_1 or transform_2; they are the same
-    pcl::transformPointCloud(*source_cloud, *transformed_cloud, transform_2);
+    pcl::transformPointCloud(*source_cloud, *transformed_cloud, transform_1);
 
     // Visualization  可视化
     printf("\nPoint cloud colors :  white  = original point cloud\n"
@@ -135,8 +143,8 @@ int main(int argc, char **argv)
 
     viewer.addCoordinateSystem(1.0, "cloud", 0);
     viewer.setBackgroundColor(0.05, 0.05, 0.05, 0); // Setting background to a dark grey
-    viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 2, "original_cloud");
-    viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 2, "transformed_cloud");
+    viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, "original_cloud");
+    viewer.setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 1, "transformed_cloud");
     //viewer.setPosition(800, 400); // Setting visualiser window position
 
     while (!viewer.wasStopped())
